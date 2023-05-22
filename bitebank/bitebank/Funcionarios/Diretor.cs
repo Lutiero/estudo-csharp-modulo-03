@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bitebank.Funcionarios
 {
-    public class Funcionario
+    public class Diretor
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }
@@ -15,7 +15,7 @@ namespace bitebank.Funcionarios
 
         public double GetBonificacao()
         {
-            return this.Salario * 0.1;
+            return this.Salario;
         }
     }
 }
