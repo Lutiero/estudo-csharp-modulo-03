@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace bitebank.Funcionarios
 {
-    public class Diretor:Funcionario
+    public class Auxiliar:Funcionario
     {
-        public Diretor(string nome, string cpf) : base(nome, cpf, 5000)
+        public Auxiliar(string nome, string cpf):base(nome, cpf, 2000)
         {
+            
         }
 
         public override double GetBonificacao()
         {
-            return this.Salario * 0.5;
+            return this.Salario * 0.2;
         }
 
         public override void AumentarSalario()
         {
-            this.Salario *= 1.15;
+            this.Salario *= 1.1;
         }
     }
 }

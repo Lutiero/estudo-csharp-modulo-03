@@ -1,33 +1,48 @@
 ﻿using bitebank.Funcionarios;
 using bitebank.Utilitario;
 
-Funcionario eduardo = new Funcionario();
+#region
+//Funcionario eduardo = new Funcionario("Eduardo", "054.156.854-62", 2000);
 
-eduardo.Nome = "Eduardo";
-eduardo.Cpf = "054.156.854-62";
-eduardo.Salario = 10;
+//Console.WriteLine($"Funcionário: {eduardo.Nome}");
+//Console.WriteLine($"Salário: {eduardo.Salario}");
+//Console.WriteLine($"Bonificação: {eduardo.GetBonificacao()}");
 
+//Diretor andreza = new Diretor("Andreza", "000.111.555-52");
 
-GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
+//Console.WriteLine($"Diretora: {andreza.Nome}");
+//Console.WriteLine($"Salário: {andreza.Salario}");
+//Console.WriteLine($"Bonificação: {andreza.GetBonificacao()}");
 
-Console.WriteLine("Funcionario: ");
-Console.WriteLine(eduardo.Nome);
+//GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
+//gerenciador.Registrar(eduardo);
+//gerenciador.Registrar(andreza);
 
-gerenciador.Registrar(eduardo);
+//Console.WriteLine($"Total de bonificações: {gerenciador.TotalDeBonificacao}");
+//Console.WriteLine($"Total de funcionários: {Funcionario.TotalDefuncionarios}");
 
-Console.WriteLine(eduardo.GetBonificacao());
+//eduardo.AumentarSalario();
+//andreza.AumentarSalario();
+//Console.WriteLine($"Novo salário Eduardo: {eduardo.Salario}");
+//Console.WriteLine($"Novo salário Andreza: {andreza.Salario}");
+#endregion
 
+CalcularBonificacao();
+void CalcularBonificacao()
+{
+    GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
 
-Diretor andreza = new Diretor();
+    Diretor diretor = new Diretor("Arnaldo, o diretor", "879.151.874-25");
+    Auxiliar auxiliar = new Auxiliar("João, o Auxiliar", "000.111.222-33");
+    Designer designer = new Designer("Maria, A designer", "999.888.777-66");
+    GerenteDeContas gerenteDeContas = new GerenteDeContas("Eduardo, o gerente de contas", "555.555.555-66");
 
-andreza.Nome = "Andreza";
-andreza.Cpf = "000.111.555-52";
-andreza.Salario = 10;
+    gerenciador.Registrar(diretor); //5000
+    gerenciador.Registrar(auxiliar); //2000
+    gerenciador.Registrar(designer); //3000
+    gerenciador.Registrar(gerenteDeContas); //4000
 
-gerenciador.Registrar(andreza);
-Console.WriteLine("Diretora: ");
-Console.WriteLine(andreza.Nome);
-Console.WriteLine(andreza.GetBonificacao());
+    Console.WriteLine($"Total de bonificações: {gerenciador.TotalDeBonificacao}");
 
-Console.WriteLine($"Total de bonificações: {gerenciador.TotalDeBonificacao}");
+}
 
