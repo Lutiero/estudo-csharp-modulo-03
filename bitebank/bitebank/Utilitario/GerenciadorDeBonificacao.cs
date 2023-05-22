@@ -16,9 +16,5 @@ namespace bitebank.Utilitario
             this.TotalDeBonificacao += funcionario.GetBonificacao();
         }
 
-        public void Registrar(Diretor diretor)
-        {
-            this.TotalDeBonificacao += diretor.GetBonificacao();
-        }
     }
 }
